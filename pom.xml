@@ -210,7 +210,22 @@
           </execution>
         </executions>
       </plugin>
+       
+      <!-- default maven-site-plugin:3.3 plugin whill cause: 
+        java.lang.ClassNotFoundException: org.apache.maven.doxia.siterenderer.DocumentContent -->
+    
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+      </plugin>
 
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+      </plugin>
+ 
       <!-- Spring Boot Actuator displays build-related information if a git.properties
         file is present at the classpath -->
       <plugin>
